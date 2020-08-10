@@ -303,7 +303,20 @@ export const EditPostForm = ({ match }) => {
 }
 ```
 
-Like with `SinglePostPage`, we'll need to import it into `App.js` and add a route that will render this component. We should also add a new link to our `SinglePostPage` that will route to `EditPostPage`, like:
+Like with `SinglePostPage`, we'll need to import it into `App.js` and add a route that will render this component.
+
+```jsx title="app.js"
+import { AddPostForm } from './features/posts/AddPostForm'
+// highlight-next-line
+import { EditPostForm } from './features/posts/EditPostForm'
+
+          // omitted code
+          <Route exact path="/posts/:postId" component={SinglePostPage} />
+          // highlight-next-line
+          <Route exact path="/editPost/:postId" component={EditPostForm} />
+```
+
+We should also add a new link to our `SinglePostPage` that will route to `EditPostPage`, like:
 
 ```jsx title="features/post/SinglePostPage.js"
 // highlight-next-line
