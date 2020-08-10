@@ -283,6 +283,13 @@ export const AddPostForm = () => {
 Import that component into `App.js`, and add it right above the `<PostsList />` component:
 
 ```jsx title="App.js"
+// omitted code
+import { PostsList } from './features/posts/PostsList'
+// highlight-next-line
+import { AddPostForm } from './features/posts/AddPostForm'
+
+function App() {
+// omitted code
 <Route
   exact
   path="/"
